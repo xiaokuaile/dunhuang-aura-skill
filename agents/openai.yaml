@@ -1,0 +1,8 @@
+interface:
+  display_name: "Dunhuang Aura"
+  short_description: "生成敦煌矿物美学的商业封面、产品广告、无字横幅与系列视觉套件"
+  brand_color: "#B56A32"
+  default_prompt: "Use $dunhuang-aura to create a text-free 5:2 commercial key visual with Dunhuang mineral-pigment aesthetics."
+
+policy:
+  allow_implicit_invocation: true
