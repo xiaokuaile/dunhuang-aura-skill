@@ -1,6 +1,6 @@
 # Workflows
 
-Read this reference for image editing, multi-round revisions, visual suites, or client-facing production.
+Read this reference for **commercial-mode** image editing, multi-round revisions, visual suites, or client-facing production. For apsara generation or identity-preserving photo edits, read [Apsara mode](apsara-mode.md).
 
 ## Generate workflow
 

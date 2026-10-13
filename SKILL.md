@@ -1,15 +1,23 @@
 ---
 name: dunhuang-aura
-description: Create or edit commercial key visuals, product advertising, social graphics, and 5:2 covers in a contemporary Dunhuang mineral-pigment style. Use when the user asks for 敦煌美学, dark cave-wall textures, illuminated mural panels, flowing mineral-color ribbons, or this specific product-stage visual language. Do not use for archaeological restoration, historical reconstruction, or devotional religious imagery.
+description: Create or edit Dunhuang mineral-pigment commercial visuals and 敦煌飞天人物 (flying apsara portraits), including identity-preserving photo stylization. Use for Dunhuang covers, product advertising, natural-flight apsaras, or explicitly requested apsara archery. Do not use for archaeological restoration, historical reconstruction, or devotional religious imagery.
 ---
 
 # Dunhuang Aura
 
-Create polished commercial imagery that borrows Dunhuang's mineral colors, weathered surfaces, ribbons, lotus geometry, caisson order, caves, mountains, and luminous murals without turning the result into a scenic souvenir poster.
+Create Dunhuang mineral-pigment imagery in either commercial mode or apsara portrait mode. Route the request before choosing templates or defaults.
 
-This is a commercial art-direction skill. It is not a license to copy a specific mural, reproduce a religious figure, or paste every Dunhuang motif into one frame.
+## Choose the visual mode first
 
-## Design read
+- **Commercial (existing default):** covers, product advertising, devices, and visual suites. Use the commercial rules below and the existing references. Exclude religious figures, including apsaras, by default in this mode.
+- **Apsara portrait:** select when the user asks for 敦煌飞天, flying apsaras, or a person's photo transformed into that style. Read [Apsara mode](references/apsara-mode.md) for its templates, preflight checks, and image acceptance. New portraits default to 3:4, natural flying or dancing posture, traditional flowing attire, coherent ribbons, and Dunhuang mural colors. Do not add bows, arrows, or an archery pose by default. Enter the archery variant only when the current request explicitly asks for archery or explicitly asks to preserve existing archery; a mention in an avoid list or an earlier image is not such a request.
+- **Reference-photo edit:** within apsara mode, inspect the supplied photo before writing the prompt. Preserve identity, facial features, hairstyle, pose, composition, camera angle, crop, original props, and original aspect ratio unless the user requests a specific change. Change only that scope; do not force an unchanged standing pose into flight or crop the photo to 3:4. A style-only edit preserves existing archery content without introducing a new scene; do not remove the bow or invent an additional action. Clarify only when specific preservation and alteration instructions conflict. Read the photo template in [Apsara mode](references/apsara-mode.md).
+
+The apsara request authorizes the stylized figure. Do not import the commercial ban on flying apsaras, product pedestals, 5:2 side-balance, or charcoal-dominant palette into this mode. Stylized portraits do not claim reconstruction of a particular cave, dynasty, or mural; requests for historical accuracy need specific sources and a separate workflow.
+
+The shared text policy, image-tool workflow, and output behavior below apply to both modes. Sections labelled commercial apply only to commercial mode. Neither mode implies copying a specific mural.
+
+## Commercial design read
 
 Treat the default request as:
 
@@ -25,11 +33,11 @@ Default visual dials:
 
 If the user gives a reference image, preserve its composition and invariants before applying these defaults.
 
-## Choose the operating mode
+## Choose generation or editing
 
 ### Generate
 
-Use when no image needs to be preserved. Read:
+Use when no image needs to be preserved. For commercial mode, read:
 
 - [Visual system](references/style-system.md) for palette, motifs, lighting, materials, and composition families.
 - [Prompt recipes](references/prompt-recipes.md) for the relevant deliverable.
@@ -46,9 +54,9 @@ Before editing:
 4. Apply one edit pass.
 5. Inspect the result against the request and the invariants.
 
-For multi-step edits, read [Edit workflows](references/workflows.md). Do not combine unrelated edits in one pass when drift would be hard to diagnose.
+For commercial multi-step edits, read [Edit workflows](references/workflows.md). For apsara edits, use the photo-preservation and correction workflow in [Apsara mode](references/apsara-mode.md). Do not combine unrelated edits in one pass when drift would be hard to diagnose.
 
-## Non-negotiable visual invariants
+## Commercial visual invariants
 
 Apply these unless the user explicitly overrides them:
 
@@ -60,10 +68,10 @@ Apply these unless the user explicitly overrides them:
 6. Use lotus and caisson forms sparingly. One strong occurrence is better than a repeated pattern wall.
 7. Keep gold restrained. It should act as reflected light, a sun disc, edge highlight, or small ornament.
 8. Avoid real brand marks unless the user supplies them and requests their use.
-9. Exclude religious figures by default. Do not generate Buddhas, bodhisattvas, apsaras, worship scenes, or copied mural characters unless the user explicitly requests historically grounded or devotional content.
+9. Exclude religious figures by default in commercial mode. An explicit apsara portrait request routes to apsara mode; historical reconstruction and devotional content need a separate workflow.
 10. Never rely on the word "高级" alone. Translate it into composition, spacing, material, lighting, palette, and object-scale decisions.
 
-## Default palette
+## Commercial default palette
 
 Use role-based color language first; include hex values only when the workflow needs precise art direction.
 
@@ -76,7 +84,7 @@ Use role-based color language first; include hex values only when the workflow n
 
 Read [Visual system](references/style-system.md) before building a brand-wide palette or multiple related images.
 
-## Composition rules
+## Commercial composition rules
 
 ### Text-free 5:2 cover
 
@@ -128,7 +136,7 @@ Determine one of three states before generation:
 
 For text-free requests, repeat the prohibition in both the primary request and constraints. Inspect product labels, device screens, background signage, frames, and decorative seals for accidental glyphs.
 
-## Prompt construction
+## Commercial prompt construction
 
 Build prompts in this order:
 
@@ -162,7 +170,7 @@ When an image-generation or image-editing tool is available:
 2. Inspect the complete frame, especially edges and corners.
 3. Check subject counts and placement.
 4. Check for accidental text and logos.
-5. Check product geometry, device geometry, reflections, and contact shadows.
+5. In commercial mode, check product geometry, device geometry, reflections, and contact shadows. In apsara mode, inspect identity and preserved photo features, anatomy, attire, ribbon attachments and occlusions; for explicitly requested archery, inspect bow, string, arrow, and both hands as one connected system.
 6. Make one targeted correction if a visible defect blocks the brief.
 7. Preserve the accepted image non-destructively when creating variants.
 
@@ -179,9 +187,11 @@ For a generated image, report:
 
 For an edited image, also report the change made and the invariants preserved.
 
-## Quality gate
+## Quality gates
 
-Before delivery, read and run [QA checklist](references/qa-checklist.md). A result fails when any of these are true:
+Before generation, check the prompt for the selected mode. A checker PASS means that textual guidance was found; it does not certify user intent, identity fidelity, anatomy, or rendered geometry. The caller must establish whether archery was explicitly requested before setting `--archery-requested`.
+
+Before image delivery, inspect the actual pixels. Commercial mode uses [QA checklist](references/qa-checklist.md); apsara mode uses the image acceptance checklist in [Apsara mode](references/apsara-mode.md). Record prompt validation and image acceptance separately, with unperformed image checks marked pending. A commercial result fails when any of these are true:
 
 - the user asked for no text but glyphs remain;
 - one side of a full-frame composition is unintentionally empty;
@@ -192,8 +202,20 @@ Before delivery, read and run [QA checklist](references/qa-checklist.md). A resu
 - religious figures appear without an explicit request;
 - the requested aspect ratio is wrong.
 
-The bundled validator checks prompt completeness before generation:
+The bundled validator checks prompt completeness before generation. Existing calls keep commercial behavior:
 
 ```bash
 python3 scripts/check_prompt.py prompt.txt --mode text-free --ratio 5:2
 ```
+
+For a new apsara portrait (default 3:4):
+
+```bash
+python3 scripts/check_prompt.py portrait.txt --scene apsara --mode text-free
+```
+
+Add `--reference-photo --ratio <original-ratio>` for a photo edit. Add `--archery-requested` only after an explicit archery request, then validate the connected bow/string/arrow/hand instructions. These flags check prompt coverage, not images. See [Apsara mode](references/apsara-mode.md) for examples.
+
+## Scope of repository changes
+
+Repository updates become available only when the intended environment installs or updates this skill and actually loads it. A merged PR alone does not activate the skill in a chat or change an image tool. Never attribute an image defect to this repository without confirming the generating session used it.

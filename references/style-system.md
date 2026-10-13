@@ -1,6 +1,6 @@
 # Visual system
 
-Use this reference when designing a new image family, selecting a composition, or correcting an image that looks like generic AI art.
+Use this reference for **commercial mode** when designing a new image family, selecting a composition, or correcting an image that looks like generic AI art. For requested apsara portraits, use [Apsara mode](apsara-mode.md); commercial product stages, material quotas, and religious-figure exclusions do not apply there.
 
 ## Core idea
 

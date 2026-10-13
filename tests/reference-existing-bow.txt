@@ -1,0 +1,11 @@
+Edit target: the supplied reference photo of a person already holding a bow.
+Use case: Dunhuang apsara style transformation.
+Asset type: text-free styled portrait; preserve original aspect ratio.
+Primary change: apply Dunhuang apsara mineral-pigment mural painting style only, with no text.
+Preserve unchanged: the person's identity, facial features and proportions, expression, hairstyle and hairline, original pose and action, composition, camera angle, crop, original aspect ratio, original light direction, existing bow and every original prop. Keep the bow's exact position, orientation and visible hand contacts. Preserve the original shot phase as photographed; do not change a carrying or preparing action into a drawn or aiming action.
+Explicit scoped overrides: only the painting style.
+Attire: evoke traditional flowing attire through painted surface treatment while preserving source garment cut, coverage, silhouette and body pose.
+Ribbons: preserve existing scarf or ribbons with identifiable attachment/resting points, continuous paths and clear overlap/occlusion; add no scarf or prop absent from the source and keep existing ribbons separate from hands and existing bowstring.
+Style/materials: fine mineral-pigment mural grain, plaster patina, softened painted edges and a recognizable face.
+Palette: preserve source light direction while using cinnabar, malachite green, lapis blue, ochre, sand mineral white and restrained gold.
+Constraints: no new bows, arrows or archery added. No additional bow, arrow or bowstring; do not remove original props or invent a nocked arrow. No pose or framing change, extra limbs, merged fingers or cloth passing through the body. No text, letters, numbers, labels, logos, watermarks or accidental glyphs.

@@ -1,6 +1,6 @@
 # QA checklist
 
-Run this after every final generation or edit.
+Run this after every final **commercial-mode** generation or edit. Apsara portraits use the image acceptance checklist in [Apsara mode](apsara-mode.md), including photo invariants and optional archery geometry. Prompt checks and visual acceptance are separate results; do not report an unseen image as accepted.
 
 ## Brief
 

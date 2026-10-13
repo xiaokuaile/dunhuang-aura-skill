@@ -1,5 +1,7 @@
 # Prompt recipes
 
+These recipes are for **commercial mode**. Their exclusions of flying apsaras apply only to that mode. For requested apsara portraits, photo stylization, or explicitly requested archery, use [Apsara mode](apsara-mode.md) instead; do not merge the commercial avoid lists into a portrait prompt.
+
 Adapt these prompts to the user's subject, aspect ratio, and text state. Keep exact counts and invariants. Do not copy every optional object into every image.
 
 ## Text-free 5:2 commercial key visual
